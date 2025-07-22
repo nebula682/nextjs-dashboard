@@ -50,14 +50,19 @@ import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
 import { notFound } from 'next/navigation';
 
-interface PageProps {
+/*interface PageProps {
   params: {
     id: string;
   };
 }
 
 export default async function Page({ params }: PageProps) {
-  const id = params.id;
+  const id = params.id;*/
+
+
+  export default async function Page({ params }: { params: { id: string } }) {
+
+    const id = params.id; // ✅ define `id` before using it
 
   // Fetch the invoice and customers concurrently using Promise.all
   const [invoice, customers] = await Promise.all([
