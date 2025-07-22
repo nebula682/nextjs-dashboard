@@ -7,13 +7,13 @@ import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
 
 // ✅ Define the type separately
-type PageProps = {
+type InvoicePageProps = {
   params: {
     id: string;
   };
 };
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: InvoicePageProps) {
   const id = params.id;
 
   const [invoice, customers] = await Promise.all([
